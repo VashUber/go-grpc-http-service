@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package foo.v1;
+
+import "google/api/annotations.proto";
+
+service FooService {
+    rpc Ping (Id) returns (Id) {
+        option (google.api.http) = {
+            get: "/v1/foo/hello"
+        };
+    }
+}
+
+message Id {
+    int64 id = 1;
+}
